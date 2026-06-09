@@ -1,42 +1,89 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-blue: #0A2540;
-  --color-brand-blue-light: #1A3A5B;
-  --color-brand-orange: #FF6B00;
-  --color-brand-gray-light: #F4F5F7;
-  --color-brand-gray-dark: #333333;
+  --color-brand-ink: #0b1f35;
+  --color-brand-ink-soft: #163250;
+  --color-brand-orange: #d35d2f;
+  --color-brand-orange-deep: #a94622;
+  --color-brand-sand: #efe3d0;
+  --color-brand-cream: #f7f3ec;
+  --color-brand-muted: #58677a;
+  --color-brand-border: #d8dee6;
+  --color-brand-panel: #ffffff;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #333333;
+  --background: #f7f3ec;
+  --foreground: #15263b;
+  --font-display: "Clash Display", "Arial Narrow", "Avenir Next Condensed",
+    sans-serif;
+  --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  background:
+    radial-gradient(circle at top left, rgba(211, 93, 47, 0.09), transparent 24%),
+    radial-gradient(circle at top right, rgba(11, 31, 53, 0.08), transparent 28%),
+    var(--background);
 }
 
 body {
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   overflow-x: hidden;
 }
 
-/* Modern Corporate styling utilities */
-.heading-primary {
-  font-family: var(--font-inter-tight), "Times New Roman", Times, serif;
-  color: var(--color-brand-blue);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-primary,
+.heading-secondary,
+.font-display {
+  font-family: var(--font-display);
 }
 
-.heading-secondary {
-  font-family: var(--font-inter), Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+a,
+button,
+input,
+textarea {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
-/* Utility to hide scrollbar for horizontal scrolling containers */
+::selection {
+  background: rgba(211, 93, 47, 0.18);
+  color: var(--foreground);
+}
+
+.section-shell {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.surface-panel {
+  @apply rounded-[2rem] border border-brand-border bg-white/88 shadow-[0_24px_70px_rgba(10,37,64,0.08)] backdrop-blur-sm;
+}
+
+.section-divider {
+  @apply h-1 w-24 rounded-full bg-brand-orange;
+}
+
+.eyebrow {
+  @apply text-sm font-semibold uppercase tracking-[0.28em] text-brand-orange;
+}
+
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
 .hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  display: none;
 }

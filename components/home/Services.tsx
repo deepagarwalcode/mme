@@ -1,33 +1,53 @@
-import React from "react";
-import { services } from "../../lib/data";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import SectionHeading from "@/components/shared/SectionHeading";
+import { services } from "@/lib/data";
 
 export default function Services() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-[1400px] mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 heading-primary" style={{ color: "#666" }}>
-            OUR SERVICES
-          </h2>
+    <section className="bg-white/55 py-20">
+      <div className="section-shell">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <SectionHeading
+            eyebrow="Core Services"
+            title="Fabrication and engineering support shaped around industrial realities."
+            description="Each service line is presented as part of a premium execution model: technically grounded, carefully fabricated, and delivered with a level of professionalism that elevates the brand."
+          />
+
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-3 self-start rounded-full border border-brand-ink px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-ink hover:-translate-y-0.5 hover:border-brand-orange hover:text-brand-orange"
+          >
+            View full service scope
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
 
-        <div className="flex flex-nowrap overflow-x-auto justify-start md:justify-center gap-4 pb-8 md:pb-0 hide-scrollbar">
-          {services.map((service, index) => (
-            <div 
-              key={index} 
-              className="flex-none w-[260px] flex flex-col items-center group cursor-pointer"
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {services.map((service) => (
+            <article
+              key={service.shortform}
+              className="surface-panel overflow-hidden p-0"
             >
-              <div className="w-full aspect-[4/3] mb-4 overflow-hidden shadow-sm">
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              <div className="relative aspect-[4/4.2] overflow-hidden">
+                <Image
+                  alt={service.title}
+                  className="object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  src={service.image}
                 />
               </div>
-              <h3 className="text-lg font-medium text-center text-gray-700 group-hover:text-brand-orange transition-colors leading-tight px-2">
-                {service.title}
-              </h3>
-            </div>
+              <div className="p-6">
+                <h3 className="heading-primary max-w-[15ch] text-[2rem] font-medium leading-[1.12] text-brand-ink">
+                  {service.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-brand-muted">
+                  {service.blurb}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </div>

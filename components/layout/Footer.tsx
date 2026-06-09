@@ -1,35 +1,77 @@
+import Link from "next/link";
+import { companyInfo, navigation, services } from "@/lib/data";
+
 export default function Footer() {
   return (
-    <footer className="bg-brand-blue text-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className="border-t border-white/10 bg-brand-ink text-white">
+      <div className="section-shell grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr_1fr]">
         <div>
-          <h3 className="text-xl font-bold mb-4 border-b-2 border-brand-orange pb-2 inline-block font-serif">Metal Matrix Engineering</h3>
-          <p className="text-gray-300 mt-4 leading-relaxed">
-            With the mission to be a supreme leader in its area of expertise, Metal Matrix Engineering has established a brand reputation in the Steel Fabrication Industry across the UAE.
+          <p className="eyebrow text-brand-sand">Metal Matrix Equipment</p>
+          <h2 className="heading-primary mt-4 max-w-md text-4xl font-semibold leading-tight text-white">
+            A premium industrial partner built around clarity, control, and craft.
+          </h2>
+          <p className="mt-6 max-w-xl text-base leading-8 text-white/72">
+            Metal Matrix Equipment combines fabrication discipline, machining
+            support, and engineered project thinking for clients who expect
+            dependable execution and a professional standard of delivery.
           </p>
         </div>
+
         <div>
-          <h3 className="text-xl font-bold mb-4 border-b-2 border-brand-orange pb-2 inline-block font-serif">Quick Links</h3>
-          <ul className="mt-4 space-y-2 text-gray-300">
-            <li><a href="/" className="hover:text-brand-orange transition-colors">Home</a></li>
-            <li><a href="/about" className="hover:text-brand-orange transition-colors">About Us</a></li>
-            <li><a href="/services" className="hover:text-brand-orange transition-colors">Our Services</a></li>
-            <li><a href="/projects" className="hover:text-brand-orange transition-colors">Gallery / Projects</a></li>
-            <li><a href="/contact" className="hover:text-brand-orange transition-colors">Contact Us</a></li>
+          <h3 className="heading-primary text-2xl font-medium text-white">
+            Explore
+          </h3>
+          <ul className="mt-6 grid gap-3 text-sm uppercase tracking-[0.18em] text-white/70">
+            {navigation.map((item) => (
+              <li key={item.href}>
+                <Link className="hover:text-brand-sand" href={item.href}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
+
         <div>
-          <h3 className="text-xl font-bold mb-4 border-b-2 border-brand-orange pb-2 inline-block font-serif">Contact Info</h3>
-          <ul className="mt-4 space-y-2 text-gray-300">
-            <li>Industrial Area 1, Dubai, UAE</li>
-            <li>+971 50 123 4567</li>
-            <li>+971 4 123 4567</li>
-            <li>info@metalmatrix.ae</li>
-          </ul>
+          <h3 className="heading-primary text-2xl font-medium text-white">
+            Contact
+          </h3>
+          <div className="mt-6 space-y-4 text-base leading-7 text-white/72">
+            <p>{companyInfo.addressLines[0]}</p>
+            <p>{companyInfo.addressLines[1]}</p>
+            <p>{companyInfo.addressLines[2]}</p>
+            <p>
+              <a className="hover:text-brand-sand" href={`tel:${companyInfo.phone.replace(/\s+/g, "")}`}>
+                {companyInfo.phone}
+              </a>
+            </p>
+            <p>
+              <a className="hover:text-brand-sand" href={`mailto:${companyInfo.email}`}>
+                {companyInfo.email}
+              </a>
+            </p>
+          </div>
+          <div className="mt-8">
+            <p className="text-sm uppercase tracking-[0.18em] text-brand-sand/80">
+              Key Service Areas
+            </p>
+            <ul className="mt-4 grid gap-2 text-sm text-white/68">
+              {services.slice(0, 3).map((service) => (
+                <li key={service.shortform}>{service.title}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 text-center text-gray-400 text-sm border-t border-gray-600 pt-8">
-        &copy; {new Date().getFullYear()} Metal Matrix Engineering. All Rights Reserved.
+
+      <div className="border-t border-white/10">
+        <div className="section-shell flex flex-col gap-3 py-6 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
+          <p>
+            &copy; {new Date().getFullYear()} Metal Matrix Equipment. All rights
+            reserved.
+          </p>
+          <p>Industrial fabrication, machining, and engineered equipment support.</p>
+        </div>
       </div>
     </footer>
   );
