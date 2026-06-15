@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Mail, Menu, Phone, X } from "lucide-react";
+import BrandLogo from "@/components/shared/BrandLogo";
 import { companyInfo, navigation } from "@/lib/data";
 
 export default function Navbar() {
@@ -37,12 +38,14 @@ export default function Navbar() {
       <nav className="section-shell flex items-center justify-between py-5">
         <Link
           href="/"
-          className="font-display text-2xl font-semibold uppercase tracking-[0.18em] text-brand-ink sm:text-3xl"
+          aria-label={companyInfo.name}
+          className="flex items-center"
         >
-          Metal Matrix
-          <span className="block text-sm font-medium tracking-[0.42em] text-brand-orange sm:text-base">
-            Equipment
-          </span>
+          <BrandLogo
+            className="w-[168px] sm:w-[220px]"
+            imageClassName="drop-shadow-[0_8px_18px_rgba(11,31,53,0.08)]"
+            priority
+          />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">

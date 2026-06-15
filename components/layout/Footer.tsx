@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BrandLogo from "@/components/shared/BrandLogo";
 import { companyInfo, navigation, services } from "@/lib/data";
 
 export default function Footer() {
@@ -6,7 +7,16 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-brand-ink text-white">
       <div className="section-shell grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr_1fr]">
         <div>
-          <p className="eyebrow text-brand-sand">Metal Matrix Equipment</p>
+          <Link
+            aria-label={companyInfo.name}
+            className="inline-flex rounded-[1.5rem] bg-white p-4 shadow-[0_18px_40px_rgba(0,0,0,0.18)]"
+            href="/"
+          >
+            <BrandLogo
+              className="w-[220px] sm:w-[280px]"
+              sizes="(min-width: 1024px) 280px, (min-width: 640px) 240px, 220px"
+            />
+          </Link>
           <h2 className="heading-primary mt-4 max-w-md text-4xl font-semibold leading-tight text-white">
             A premium industrial partner built around clarity, control, and craft.
           </h2>

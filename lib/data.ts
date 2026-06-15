@@ -27,7 +27,7 @@ export type Industry = {
 
 export const companyInfo = {
   name: "Metal Matrix Equipment",
-  phone: "+971 56 302 6806",
+  phone: "+971 545392207",
   email: "info@metalmatrixequipment.com",
   addressLines: [
     "Office 208, Gulf Business Centre",
@@ -144,7 +144,7 @@ export const services: Service[] = [
   },
   {
     title: "Conveying System Works",
-    image: "/services/csw.jpeg",
+    image: "/services/csw.png",
     shortform: "csw",
     blurb:
       "Fabricated components and supporting assemblies for conveying systems where reliability, maintainability, and execution discipline are essential.",
@@ -285,12 +285,14 @@ export const operatingPrinciples = [
 
 export const serviceFaqs = [
   {
-    question: "What kind of enquiries are best suited to Metal Matrix Equipment?",
+    question:
+      "What kind of enquiries are best suited to Metal Matrix Equipment?",
     answer:
       "Projects that require custom fabrication, machining, conveying-related assemblies, or engineering-driven metalwork are the strongest fit. The team is best positioned where clarity, quality, and disciplined execution matter as much as output quantity.",
   },
   {
-    question: "Can you support custom fabrication requirements rather than only standard items?",
+    question:
+      "Can you support custom fabrication requirements rather than only standard items?",
     answer:
       "Yes. The service model is geared toward project-specific scopes, custom assemblies, and fabrication packages developed around the client requirement rather than a fixed catalogue approach.",
   },
@@ -305,7 +307,8 @@ export const serviceFaqs = [
       "The working approach focuses on specification alignment, dimensional attention, fabrication discipline, and clean coordination throughout the production cycle so that the final handover is dependable and installation-ready.",
   },
   {
-    question: "Can services be tailored to different industries or project conditions?",
+    question:
+      "Can services be tailored to different industries or project conditions?",
     answer:
       "Yes. Requirements vary widely from one facility or sector to another, so each scope is reviewed in context and shaped around the operating environment, material expectations, and functional priorities of the project.",
   },
