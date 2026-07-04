@@ -30,9 +30,9 @@ export const companyInfo = {
   phone: "+971 545392207",
   email: "info@metalmatrixequipment.com",
   addressLines: [
-    "Office 208, Gulf Business Centre",
-    "Al Quoz Industrial Area 3",
-    "Dubai, United Arab Emirates",
+    "ALSAFI 1 - 204",
+    "Al Mararr, Dubai",
+    "PO Box - 123024",
   ],
   topBanner:
     "Industrial fabrication, machining, and engineered equipment support for high-specification projects.",
@@ -53,7 +53,7 @@ export const navigation: NavigationItem[] = [
   { href: "/contact", label: "Contact" },
 ];
 
-export const heroSlides = ["/infra/9.jpeg", "/infra/11.jpeg", "/infra/12.jpeg"];
+export const heroSlides = ["/infra/28.jpeg", "/infra/29.jpeg", "/infra/30.jpeg"];
 
 export const heroPillars = [
   "Precision-led fabrication",
@@ -97,9 +97,9 @@ export const services: Service[] = [
       "Preparation for efficient site installation or handover",
     ],
     applications: [
-      "Process piping systems",
-      "Utility lines and specialist stainless assemblies",
-      "Projects requiring corrosion-conscious fabrication",
+      "Chemical Processing",
+      "Desalination plants",
+      "Food processing industries",
     ],
   },
   {

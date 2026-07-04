@@ -16,7 +16,7 @@ export default function ServicesPage() {
       <PageHero
         description="Our services are structured for clients who need more than a supplier list. They need an industrial partner that understands fabrication quality, execution discipline, and project expectations."
         eyebrow="Services"
-        image="/infra/21.jpeg"
+        image="/infra/27.jpeg"
         title="A deeper look at the services that define the company offer."
       />
 

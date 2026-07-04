@@ -20,7 +20,7 @@ export default function AboutPage() {
       <PageHero
         description="Learn how Metal Matrix Equipment approaches fabrication, engineering support, and client service through a company profile focused on standards, direction, and long-term intent."
         eyebrow="About Us"
-        image="/infra/17.jpeg"
+        image="/infra/26.jpeg"
         title="A company profile built around capability, standards, and intent."
       />
 

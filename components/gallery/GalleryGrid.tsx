@@ -29,29 +29,24 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
 
   return (
     <>
-      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="columns-1 gap-5 sm:columns-2 xl:columns-3">
         {images.map((image, index) => (
           <button
             key={image}
-            className={`group relative overflow-hidden rounded-[2rem] border border-brand-border bg-white shadow-[0_24px_60px_rgba(10,37,64,0.08)] ${
-              index % 5 === 0 ? "xl:col-span-2" : ""
-            }`}
+            className="group relative mb-5 block w-full break-inside-avoid overflow-hidden rounded-[2rem] border border-brand-border bg-white shadow-[0_24px_60px_rgba(10,37,64,0.08)]"
             onClick={(event) => {
               event.stopPropagation();
               setSelectedImage(image);
             }}
             type="button"
           >
-            <div className="relative aspect-[4/3]">
-              <Image
-                alt={`Gallery image ${index + 1}`}
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                src={image}
-                unoptimized
-              />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt={`Gallery image ${index + 1}`}
+              className="block h-auto w-full transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
           </button>
         ))}
       </div>

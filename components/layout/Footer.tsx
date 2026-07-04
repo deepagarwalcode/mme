@@ -47,9 +47,9 @@ export default function Footer() {
             Contact
           </h3>
           <div className="mt-6 space-y-4 text-base leading-7 text-white/72">
-            <p>{companyInfo.addressLines[0]}</p>
-            <p>{companyInfo.addressLines[1]}</p>
-            <p>{companyInfo.addressLines[2]}</p>
+            {companyInfo.addressLines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
             <p>
               <a className="hover:text-brand-sand" href={`tel:${companyInfo.phone.replace(/\s+/g, "")}`}>
                 {companyInfo.phone}
